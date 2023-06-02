@@ -45,9 +45,7 @@ extensions = [
 html_theme = 'furo'
 html_static_path = ['_static']
 html_title = 'MOOG_SCAT'
-html_favicon = './_static/favicon_moog.ico'
 html_logo = '_static/moog_image.png'
-pygments_style = "sphinx"
 #html_theme_options = {
 #    'logotext1': ' ',
 #    'logotext2': 'MOOG_SCAT',  # white,  semi-bold
