@@ -17,11 +17,11 @@ use the following command:
 
     make -f Makefile*
 
-Accordingly, a Fortran compiler is necessary (succesful MOOG_SCAT compilation has been achieved with a ``gfortran`` compiler).  In addition, MOOG_SCAT relies upon 
-SuperMongo for plotting/visualziation.	
+Accordingly, a Fortran compiler is necessary (succesful MOOG_SCAT compilation has been achieved with a ``gfortran`` compiler).  In addition, MOOG_SCAT relies 
+completely upon [SuperMongo](https://www.astro.princeton.edu/~rhl/sm/) for plotting/visualziation (latest release 2.4.1).	
     
 Documentation
 -------------
 
-Refer to `the documentation <http:https://moog-scat.readthedocs.io/en/latest///>`_ for information on how
+Refer to the [Documentation](https://moog-scat.readthedocs.io/en/latest/) for information on how
 to install and use MOOG_SCAT.
