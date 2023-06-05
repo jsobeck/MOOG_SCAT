@@ -7,22 +7,17 @@
 MOOG_SCAT
 **********
 
-Overview and Background
-=======================
-MOOG_SCAT is based on the radiative transfer code MOOG (developed by C. Sneden; Sneden 1973).
-
-- `Installation <installation.html>`_
-
+Overview 
+=========
+``MOOG_SCAT`` is based on the radiative transfer code MOOG (developed by C. Sneden; Sneden 1973).
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
+   
+   installation
+   background
+   MOOG_SCAT subroutines
+   MOOG_LTE routines
 
 
-
-Indices and Tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
