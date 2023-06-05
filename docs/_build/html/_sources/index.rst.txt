@@ -8,16 +8,34 @@ MOOG_SCAT
 **********
 
 Overview 
-=========
-``MOOG_SCAT`` is based on the radiative transfer code MOOG (developed by C. Sneden; Sneden 1973).
+--------
+``MOOG_SCAT`` is based on the LTE radiative transfer code MOOG developed by C. Sneden (1973).  It contains modifications that allow for the treatment of 
+isotropic, coherent scattering in stars.  ``MOOG_SCAT`` employs a modified form of the source function and solves radiative transfer with a short 
+charactersitics approach and an acclerated lambda iteration scheme.
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Installation and Build
    
    installation
-   background
-   MOOG_SCAT subroutines
-   MOOG_LTE routines
+   
+.. toctree::   
+   :maxdepth: 2
+   :caption: LTE and SCAT Code Routines
+
+   moog_scat_routines
+   moog_lte_routines
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Code Reference Sites and Materials
+
+   Changelog <changelog>
+   GitHub Repository <https://github.com/jsobeck/MOOG_SCAT>
+   Issues <https://github.com/jsobeck/MOOG_SCAT/issues>
 
 
+Indices and Tables
+------------------
+* :ref:`genindex`
+* :ref:`modindex`

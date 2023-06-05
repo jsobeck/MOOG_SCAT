@@ -1,0 +1,1044 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="MOOG_LTE Routines" href="moog_lte_routines.html" />
+
+    <!-- Generated with Sphinx 7.0.1 and Furo 2023.05.20 -->
+        <title>MOOG_SCAT v1.0.0 CHANGELOG - MOOG_SCAT</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">MOOG_SCAT</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="_static/moog_image.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">MOOG_SCAT</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Installation and Build</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">LTE and SCAT Code Routines</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="moog_scat_routines.html">MOOG_SCAT Routines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="moog_lte_routines.html">MOOG_LTE Routines</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Code Reference Sites and Materials</span></p>
+<ul class="current">
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Changelog</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/jsobeck/MOOG_SCAT">GitHub Repository</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/jsobeck/MOOG_SCAT/issues">Issues</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="moog-scat-v1-0-0-changelog">
+<h1>MOOG_SCAT v1.0.0 CHANGELOG<a class="headerlink" href="#moog-scat-v1-0-0-changelog" title="Permalink to this heading">#</a></h1>
+<p>Purpose:</p>
+<ul class="simple">
+<li><p>update all LTE subroutines so that they are consistent with the current 2019 release</p></li>
+<li><p>general update/vet of MOOG-SCAT code in order to issue new release</p></li>
+</ul>
+<p>General log of changes:</p>
+<ul class="simple">
+<li><p>Compared MOOG_LTE v.2019 to MOOG_SCAT v.2017-2020 (unreleased)</p></li>
+<li><p>Adopted and integrated all non-SCAT MOOG-LTE subroutines</p></li>
+<li><p>Modified, as needed, SCAT-associated routines to be consistent with their LTE counterparts</p></li>
+<li><p>Uncovered a few errors in MOOG-LTE v.2019 (release Nov 2019) and altered them in current SCAT code version</p></li>
+</ul>
+<section id="list-of-lte-coverted-routines">
+<h2>List of LTE Coverted Routines<a class="headerlink" href="#list-of-lte-coverted-routines" title="Permalink to this heading">#</a></h2>
+<p>(All MOOG Drivers; ! indicates unxpected version differences)</p>
+<p>Abfind –&gt; Abfind_SCAT</p>
+<p>Abpop –&gt; Abpop_SCAT (!; resolved)</p>
+<p>Binary –&gt; Binary_SCAT</p>
+<p>Blends –&gt; Blends_SCAT (!; resolved)</p>
+<p>Cdcalc –&gt; Cdcalc_SCAT</p>
+<p>Cog –&gt; Cog_SCAT</p>
+<p>Cogsyn –&gt; Cogsyn_SCAT</p>
+<p>Curve –&gt; Curve_SCAT</p>
+<p>Doflux –&gt; Doflux_SCAT</p>
+<p>Ewfind –&gt; Ewfind_SCAT (!)</p>
+<p>Fakeline –&gt; Fakeline_SCAT</p>
+<p>Getsyns –&gt; Getsyns_SCAT</p>
+<p>Gridsyn –&gt; Gridsyn_SCAT</p>
+<p>Lineabund –&gt; Lineabund_SCAT</p>
+<p>Various Makefiles (!)</p>
+<p>Moog –&gt; Moog_SCAT (!; resolved)</p>
+<p>Moogsilent –&gt;Moogsilent_SCAT (!; resolved)</p>
+<p>Oneline –&gt; Oneline_SCAT (!; resolved??—&gt; check equations/theory)</p>
+<p>Synpop –&gt; Synpop_SCAT (!; resolved)</p>
+<p>Synspec –&gt; Synspec_SCAT(!; resolved)</p>
+<p>Synth –&gt; Synth_SCAT</p>
+</section>
+<section id="scat-only-routines-files">
+<h2>SCAT-Only Routines/Files<a class="headerlink" href="#scat-only-routines-files" title="Permalink to this heading">#</a></h2>
+<p>Scat.com</p>
+<p>Ang_Weight_SCAT.f</p>
+<p>Gauss_Quad_Sum.f</p>
+<p>Sourcefunc_cont_SCAT.f</p>
+<p>Sourcefunc_line_SCAT.f</p>
+</section>
+<section id="lte-code-changes">
+<h2>LTE Code Changes<a class="headerlink" href="#lte-code-changes" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Removal of the ESTIM routine (as compared to eariler LTE [2017, 2014] versions)</p></li>
+<li><p>Removal of the Minimax routine (as compared to eariler LTE [2017, 2014] versions)</p></li>
+<li><p>Addition of SETMOLS routine (as compared to eariler LTE [2017, 2014] versions)</p></li>
+<li><p>In Moog_silent.f, there is still redundancy if a user calls the deprecated ‘isotop’ driver while in Moog.f no such redundancy exists. Consistency issue!</p></li>
+</ul>
+</section>
+<section id="js-suggested-moog-lte-modifications">
+<h2>JS Suggested MOOG_LTE Modifications<a class="headerlink" href="#js-suggested-moog-lte-modifications" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Removal of PLOTVALS common block (still mentioned in Correl.f; but as Correl.f subroutine does not employ any of the VAR, should be fine)</p></li>
+<li><p>Modification of Correl.f to remove PLOTVALS common block</p></li>
+<li><p>Removal of common block file from distribution</p></li>
+</ul>
+</section>
+<section id="js-to-do">
+<h2>JS To Do<a class="headerlink" href="#js-to-do" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Modified LTE routines list</p></li>
+<li><p>New/additional SCAT routines</p></li>
+<li><p>How to call MOOG_SCAT, e.g., ./MOOG_SCAT</p></li>
+<li><p>General Documentation</p></li>
+</ul>
+</section>
+<section id="lte-scat-common-subroutines-difference-dff-comparisons">
+<h2>LTE - SCAT Common Subroutines: Difference (dff) Comparisons<a class="headerlink" href="#lte-scat-common-subroutines-difference-dff-comparisons" title="Permalink to this heading">#</a></h2>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Abfind</span>
+<span class="go">2c2</span>
+<span class="go">&lt;       subroutine abfind</span>
+<span class="go">---</span>
+<span class="go">&gt;       subroutine abfind_scat</span>
+<span class="go">60c60</span>
+<span class="go">&lt; 100   call fakeline</span>
+<span class="go">---</span>
+<span class="go">&gt; 100   call fakeline_scat</span>
+<span class="go">92c92</span>
+<span class="go">&lt;             call lineabund (abundin)</span>
+<span class="go">---</span>
+<span class="go">&gt;             call lineabund_scat (abundin)</span>
+<span class="go">105c105</span>
+<span class="go">&lt;             call lineabund (abundin)</span>
+<span class="go">---</span>
+<span class="go">&gt;             call lineabund_scat (abundin)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; Abpop [!ONE CHANGE; RESOLVED]
+2c2
+&lt;       subroutine abpop
+---
+&gt;       subroutine abpop_scat
+101c101
+&lt;             call curve
+---
+&gt;             call curve_scat
+223d222
+&lt;       if (silent .eq. &#39;n&#39;) then
+227,229d225
+&lt;       else
+&lt;          choice = &#39;y&#39;
+&lt;       endif
+</pre></div>
+</div>
+<p>&gt;&gt;&gt;Binary
+c2
+&lt;       subroutine binary
+—
+&gt;       subroutine binary_scat
+111c111
+&lt;          call synspec
+—
+&gt;          call synspec_scat
+122c122
+&lt;             call synspec
+—
+&gt;             call synspec_scat</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; Blends [!UNEXPECTED CHANGES]
+2c2
+&lt;       subroutine blends
+---
+&gt;       subroutine blends_scat
+14a15
+&gt;       include &#39;Scat.com&#39;
+122c123
+&lt;             call synspec
+---
+&gt;             call synspec_scat
+180c181
+&lt;          call synspec
+---
+&gt;          call synspec_scat
+194,196c195,200
+&lt;             call cdcalc(2)
+&lt;             first = 0.4343*cd(1)
+&lt;             d(1) = rinteg(xref,cd,dummy1,ntau,first)
+---
+&gt; c            call cdcalc (2)
+&gt;             call cdcalc_scat(2)
+&gt; c            first = 0.4343*cd(1)
+&gt;             first = 0.4343*adepth
+&gt; c            d(1) = rinteg(xref,cd,dummy1,ntau,first)
+&gt;             d(1) = adepth
+198c202,203
+&lt;                dummy1(i) = xref(i)*cd(i)
+---
+&gt; c               dummy1(i) = xref(i)*cd(i)
+&gt;                dummy1(i) = xref(i)*adepth
+200a206,207
+&gt; c            cdmean = rinteg(xref,dummy1,dummy2,ntau,first)/
+&gt; c     .      rinteg(xref,cd,dummy2,ntau,first)
+202c209
+&lt;      .      rinteg(xref,cd,dummy2,ntau,first)
+---
+&gt;      .      rinteg(xref,adepth,dummy2,ntau,first)
+204c211,212
+&lt;                if (cdmean .lt. cd(i)) exit
+---
+&gt; c               if (cdmean .lt. cd(i)) exit
+&gt;                if (cdmean .lt. adepth) exit
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Cdcalc</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Cog</span>
+<span class="go">2c2</span>
+<span class="go">&lt;       subroutine cog</span>
+<span class="go">---</span>
+<span class="go">&gt;       subroutine cog_scat</span>
+<span class="go">73c73</span>
+<span class="go">&lt;          call curve</span>
+<span class="go">---</span>
+<span class="go">&gt;          call curve_scat</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Cogsyn</span>
+<span class="go">&lt;       subroutine cogsyn</span>
+<span class="go">---</span>
+<span class="go">&gt;       subroutine cogsyn_scat</span>
+<span class="go">68c68</span>
+<span class="go">&lt;       call synspec</span>
+<span class="go">---</span>
+<span class="go">&gt;       call synspec_scat</span>
+<span class="go">83c83</span>
+<span class="go">&lt;       call synspec</span>
+<span class="go">---</span>
+<span class="go">&gt;       call synspec_scat</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Curve</span>
+<span class="go">2c2</span>
+<span class="go">&lt;       subroutine curve</span>
+<span class="go">---</span>
+<span class="go">&gt;       subroutine curve_scat</span>
+<span class="go">24c24</span>
+<span class="go">&lt; 31    call oneline (2)</span>
+<span class="go">---</span>
+<span class="go">&gt; 31    call oneline_scat (2)</span>
+<span class="go">41c41</span>
+<span class="go">&lt; 61    call oneline (2)</span>
+<span class="go">---</span>
+<span class="go">&gt; 61    call oneline_scat (2)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Doflux</span>
+<span class="go">2c2</span>
+<span class="go">&lt;       subroutine doflux</span>
+<span class="go">---</span>
+<span class="go">&gt;       subroutine doflux_scat</span>
+<span class="go">11a12</span>
+<span class="go">&gt;       include &#39;Scat.com&#39;</span>
+<span class="go">53,55c54,58</span>
+<span class="go">&lt;       call cdcalc (1)</span>
+<span class="go">&lt;       first = 0.4343*cd(1)</span>
+<span class="go">&lt;       flux = rinteg(xref,cd,dummy1,ntau,first)</span>
+<span class="go">---</span>
+<span class="go">&gt; c      call cdcalc (1)</span>
+<span class="go">&gt;       call cdcalc_scat (1)</span>
+<span class="go">&gt; c      first = 0.4343*cd(1)</span>
+<span class="go">&gt; c      flux = rinteg(xref,cd,dummy1,ntau,first)</span>
+<span class="go">&gt;       flux = Flux_cont_MOOG</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; EWfind [?UNEXPECTED CHANGES]
+,2c1
+&lt;
+&lt;       subroutine ewfind
+---
+&gt;       subroutine ewfind_scat
+12a12
+&gt;       include &#39;Scat.com&#39;
+16a17
+&gt;
+19a21
+&gt;
+51a54
+&gt;       isynth = 1
+69,70c72,73
+&lt;          array(1:40) = &#39;wavelength        EP     logGF     ident&#39;
+&lt;          array(41:60) = &#39;     Abund    EWcalc&#39;
+---
+&gt;          call molquery
+&gt;          write (array,1001)
+77c80
+&lt;          call oneline (1)
+---
+&gt;          call oneline_scat (1)
+79a83,85
+&gt;
+&gt;
+&gt;          if (iatom .lt. 100) then
+80a87,89
+&gt;          else
+&gt;             xab = dlog10(xabund(iabtom)) + 12.
+&gt;          endif
+93,94c102,103
+&lt;      .                         dlog10(gf(lim1)), atom1(lim1),
+&lt;      .                         xab, 1000.*widout(lim1)
+---
+&gt;      .                         dlog10(gf(lim1)), names(iaa),
+&gt;      .                         names(ibb), xab, 1000.*widout(lim1)
+98,99c107,108
+&lt;      .                          dlog10(gf(lim1)), atom1(lim1),
+&lt;      .                          xab, 1000.*widout(lim1)
+---
+&gt;      .                          dlog10(gf(lim1)), names(iaa),
+&gt;      .                          names(ibb), xab, 1000.*widout(lim1)
+103a113
+&gt;
+111,114d120
+&lt;          do i=1,ntau
+&lt;             taunu(i) = taunu0(i)
+&lt;          enddo
+&lt;          call cdcalc (2)
+117a124,129
+&gt;          do i=1,ntau
+&gt;             taunu(i) = taunu0(i)
+&gt;          enddo
+&gt; c         call cdcalc (2)
+&gt;          call cdcalc_SCAT (2)
+&gt;          if (linprintopt .ge. 2) then
+120,121c132,134
+&lt;      .                        pgas(i), rho(i), xdepth(i), taulam(i),
+&lt;      .                        taunu0(i), cd(i), i=1,ntau)
+---
+&gt;      .                          pgas(i), rho(i), kaplam(i),
+&gt;      .                          taulam(i), taunu0(i), adepth, i=1,ntau)
+&gt;          endif
+127,129c140
+&lt;                xdepthlam1 = xdepth(i-1) + (1.-taulam(i-1))*
+&lt;      .                (xdepth(i)-xdepth(i-1))/(taulam(i)-taulam(i-1))
+&lt;                write (nf2out,1013) int(xdepthlam1), i
+---
+&gt;                write (nf2out,1013) tauref(i), i
+142,144c153
+&lt;                xdepthnu01 = xdepth(i-1) + (1.-taunu0(i-1))*
+&lt;      .                (xdepth(i)-xdepth(i-1))/(taunu0(i)-taunu0(i-1))
+&lt;                write (nf2out,1014) int(xdepthnu01), i
+---
+&gt;                write (nf2out,1014) tauref(i), i
+153,157c162
+&lt;                tautot1 = taulam(i-1) + taunu0(i-1)
+&lt;                tautot2 = taulam(i) + taunu0(i)
+&lt;                xdepthtot1 = xdepth(i-1) + (1.-tautot1)*
+&lt;      .                (xdepth(i)-xdepth(i-1))/(tautot2-tautot1)
+&lt;                write (nf2out,1015) int(xdepthtot1), i
+---
+&gt;                write (nf2out,1015) tauref(i), i
+163a169,170
+&gt; c    SCATTERING TO DO: create a two-dimensional array that stores adepth as a function of line
+&gt; c    frequency; then consider the code below
+165c172,173
+&lt;             dummy1(i) = xref(i)*dabs(cd(i))
+---
+&gt; c            dummy1(i) = xref(i)*dabs(cd(i))
+&gt;             dummy1(i) = xref(i)*dabs(adepth)
+169c177,178
+&lt;             dummy1(i) = dabs(cd(i))
+---
+&gt; c            dummy1(i) = dabs(cd(i))
+&gt;             dummy1(i) = dabs(adepth)                                     | RE-CONSIDER
+175,178c184
+&lt;                xdepthxrefmean = xdepth(i-1) + (xrefmean-xref(i-1))*
+&lt;      .                (xdepth(i)-xdepth(i-1))/(xref(i)-xref(i-1))
+&lt;                write (nf2out,1017) int(xdepthxrefmean), i, tauref(i),
+&lt;      .                             taulam(i)
+---
+&gt;                write (nf2out,1017) 10**(xrefmean), i
+195,211c201,216
+&lt; 1003  format (f10.2,f10.2,f10.3,&#39;     &#39;,a2,a3,f10.2,f10.1)
+&lt; 1004  format (f10.2,f10.2,f10.3,a10,f10.2,f10.1)
+&lt; 1010     format (&#39;  i&#39;, 2x, &#39;rhox&#39;, 5x, &#39;xref&#39;, 5x, &#39;T&#39;, 5x, &#39;Pgas&#39;,
+&lt;      .           6x, &#39;rho&#39;, 8x, &#39;X&#39;, 3x, &#39;taulam&#39;, 3x, &#39;taunu0&#39;,
+&lt;      .           8x, &#39;Cd&#39;)
+&lt; 1011  format (i3, 1pe9.2, 0pf6.2, i6, 1p5e9.2, e10.2)
+&lt; 1013           format (i7, &#39;km (layer ~&#39;, i3, &#39;) = physical depth&#39;,
+&lt;      .                 &#39; for tau(cont) ~ 1&#39;)
+&lt; 1014           format (i7, &#39;km (layer ~&#39;, i3, &#39;) = physical depth&#39;,
+&lt;      .                 &#39; for tau(line center) ~ 1&#39;)
+&lt; 1015           format (i7, &#39;km (layer ~&#39;, i3, &#39;) = physical depth&#39;,
+&lt;      .                 &#39; for tau(cont)+tau(line center) ~ 1&#39;)
+&lt; 1016           format (7x,&#39;  NOTE: tau(line center) &lt; 1 at deepest&#39;,
+&lt;      .                 &#39; atmosphere layer&#39;)
+&lt; 1017           format (i7, &#39;km (layer ~&#39;, i3, &#39;) = line center &#39;,
+&lt;      .                 &#39;formation mean depth; C_d weight&#39;/
+&lt;      .                 25x, &#39;where tauref, taulam =&#39;, 2f8.3)
+---
+&gt; 1003  format (f10.2,f10.2,f10.3,&#39;     &#39;,a2,a3,f10.2,f10.1/)
+&gt; 1004  format (f10.2, f10.2, f10.3, 6x, a2, a2, f10.2, f10.1/)
+&gt; 1010     format (&#39; i&#39;, 5x, &#39;rhox&#39;, 2x, &#39;xref&#39;, 5x, &#39;T&#39;, 5x, &#39;Pgas&#39;,
+&gt;      .           6x, &#39;rho&#39;, 3x, &#39;kaplam&#39;, 3x, &#39;taulam&#39;,
+&gt;      .           3x, &#39;taunu0&#39;, 8x, &#39;Cd&#39;)
+&gt; 1011  format (i2, 1pd9.2, 0pf6.2, i6, 1p5d9.2, d10.2)
+&gt; 1013           format (5x, &#39;tau(ref) =&#39;, 1pe10.2,
+&gt;      .                 &#39; (level=&#39;,i2, &#39;) for tau(cont) ~ 1&#39;)
+&gt; 1014           format (5x, &#39;tau(ref) =&#39;, 1pe10.2,
+&gt;      .                 &#39; (level=&#39;,i2, &#39;) for tau(line) ~ 1&#39;)
+&gt; 1015           format (5x, &#39;tau(ref) =&#39;, 1pe10.2,
+&gt;      .                 &#39; (level=&#39;,i2, &#39;) for tau(cont+line) ~ 1&#39;)
+&gt; 1016           format (7x,&#39;  NOTE: line center tau(line) &lt; 1&#39;,
+&gt;      .                 &#39;  at deepest atmosphere layer&#39;)
+&gt; 1017           format (5x, &#39;C_d weighted mean formation tau(ref) =&#39;,
+&gt;      .                 1pe10.2, &#39; (level=&#39;,i2, &#39;)&#39;)
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Fakeline</span>
+<span class="go">2c2</span>
+<span class="go">&lt;       subroutine fakeline</span>
+<span class="go">---</span>
+<span class="go">&gt;       subroutine fakeline_scat</span>
+<span class="go">64c64</span>
+<span class="go">&lt;       call curve</span>
+<span class="go">---</span>
+<span class="go">&gt;       call curve_scat</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Getsyns</span>
+<span class="go">2c2</span>
+<span class="go">&lt;       subroutine getsyns (lscreen,ncall)</span>
+<span class="go">---</span>
+<span class="go">&gt;       subroutine getsyns_scat (lscreen,ncall)</span>
+<span class="go">73c73</span>
+<span class="go">&lt;          call synspec</span>
+<span class="go">---</span>
+<span class="go">&gt;          call synspec_scat</span>
+<span class="go">85c85</span>
+<span class="go">&lt;             call synspec</span>
+<span class="go">---</span>
+<span class="go">&gt;             call synspec_scat</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Gridsyn</span>
+<span class="go">2c2</span>
+<span class="go">&lt;       subroutine gridsyn</span>
+<span class="go">---</span>
+<span class="go">&gt;       subroutine gridsyn_scat</span>
+<span class="go">103c103</span>
+<span class="go">&lt;          call synspec</span>
+<span class="go">---</span>
+<span class="go">&gt;          call synspec_scat</span>
+<span class="go">115c115</span>
+<span class="go">&lt;             call synspec</span>
+<span class="go">---</span>
+<span class="go">&gt;             call synspec_scat</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Lineabund</span>
+<span class="go">2c2</span>
+<span class="go">&lt;       subroutine lineabund (abundin)</span>
+<span class="go">---</span>
+<span class="go">&gt;       subroutine lineabund_scat (abundin)</span>
+<span class="go">36c36</span>
+<span class="go">&lt; 15    call oneline (1)</span>
+<span class="go">---</span>
+<span class="go">&gt; 15    call oneline_scat (1)</span>
+<span class="go">82c82</span>
+<span class="go">&lt;       call oneline (2)</span>
+<span class="go">---</span>
+<span class="go">&gt;       call oneline_scat (2)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; Moog [!UNEXPECTED CHANGES]
+2c2
+&lt;       program moog
+---
+&gt;       program moog_scat
+22c22
+&lt;      .  &#39;/Users/jsobeck/moog2019_LTE&#39;
+---
+&gt;      .  &#39;/Users/jsobeck/moog_SCAT-update&#39;
+53a54,55
+&gt; c*****Call the Ang_Weight_SCAT routine
+&gt;         call ang_weight_SCAT
+55c57
+&lt; c*****use one of the standard driver routines
+---
+&gt; c*****use one of the standard driver routines (&quot;isotop&quot; is obsolete):
+59c61
+&lt;          call synth
+---
+&gt;          call synth_scat
+61c63
+&lt;          call cogsyn
+---
+&gt;          call cogsyn_scat
+63c65
+&lt;          call blends
+---
+&gt;          call blends_scat
+65c67
+&lt;          call abfind
+---
+&gt;          call abfind_scat
+67c69
+&lt;          call ewfind
+---
+&gt;          call ewfind_scat
+69c71
+&lt;          call cog
+---
+&gt;          call cog_scat
+73c75
+&lt;          call doflux
+---
+&gt;          call doflux_scat
+77c79
+&lt;          call gridsyn
+---
+&gt;          call gridsyn_scat
+81c83
+&lt;          call binary
+---
+&gt;          call binary_scat
+83c85
+&lt;          call abpop
+---
+&gt;          call abpop_scat
+85c87
+&lt;          call synpop
+---
+&gt;          call synpop_scat
+106d107
+&lt;
+108a110,111
+&gt; 1002  format (&#39;The &quot;isotop&quot; driver is obsolete; &quot;synth&quot; does &#39;,
+&gt;      .        &#39;its functions now!&#39;)
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; Moogsilent [!UNEXPECTED CHANGES]
+2c2
+&lt;       program moogsilent
+---
+&gt;       program moogsilent_scat
+4c4
+&lt; c     This is the main driver for the non-interactive version of MOOG.
+---
+&gt; c     This is the main driver for &quot;non-interactive&quot; version of MOOG.
+6c6
+&lt; c     subroutines.  In this version of MOOG the parameter file must
+---
+&gt; c     subroutines.  In this version of MOOG, the parameter file must
+8c8
+&lt; c     user to name the parameter file)
+---
+&gt; c     user to name the parameter file).
+12a13
+&gt;       character yesno*1
+16c17
+&lt; c     in compiling MOOG, here the various machine-specific things are
+---
+&gt; c*****in compiling MOOG, here the various machine-specific things are
+19c20
+&lt; c     generate a reminder of this
+---
+&gt; c     generate a reminder of this necessity
+22c23
+&lt;      .  &#39;/Users/chris/CODES/moognov2019/&#39;
+---
+&gt;      .  &#39;/Users/jsobeck/moog_SCAT-update&#39;
+42c43
+&lt; c*****declare this to be the non-interactive version; variable &quot;silent&quot;
+---
+&gt; c*****declare this to be the normal interactive version; variable &quot;silent&quot;
+51c52
+&lt;       control = &#39;       &#39;
+---
+&gt; 1     control = &#39;       &#39;
+58,59d58
+&lt;       elseif (control .eq. &#39;isoplot&#39;) then
+&lt;          call plotit
+61c60
+&lt;          call synth
+---
+&gt;          call synth_scat
+63c62
+&lt;          call cogsyn
+---
+&gt;          call cogsyn_scat
+65c64
+&lt;          call blends
+---
+&gt;          call blends_scat
+67c66
+&lt;          call abfind
+---
+&gt;          call abfind_scat
+69c68
+&lt;          call ewfind
+---
+&gt;          call ewfind_scat
+71c70
+&lt;          call cog
+---
+&gt;          call cog_scat
+74,76d72
+&lt;       elseif (control .eq. &#39;isotop &#39;) then
+&lt;          control = &#39;synth  &#39;
+&lt;          call synth
+78c74
+&lt;          call doflux
+---
+&gt;          call doflux_scat
+82c78
+&lt;          call gridsyn
+---
+&gt;          call gridsyn_scat
+86c82
+&lt;          call binary
+---
+&gt;          call binary_scat
+88c84
+&lt;          call abpop
+---
+&gt;          call abpop_scat
+90c86
+&lt;          call synpop
+---
+&gt;          call synpop_scat
+100c96
+&lt;          array = &#39;THIS IS NOT ONE OF THE DRIVERS. I QUIT!&#39;
+---
+&gt;          array = &#39;THIS IS NOT ONE OF THE DRIVERS.  TRY AGAIN (y/n)?&#39;
+102c98,104
+&lt;          stop
+---
+&gt;          istat = ivmove (3,1)
+&gt;          read (*,*) yesno
+&gt;          if (yesno .eq. &#39;y&#39;) then
+&gt;             go to 1
+&gt;          else
+&gt;             call finish (0)
+&gt;          endif
+104a107,108
+&gt; c*****Call the Ang_Weight_SCAT routine
+&gt;         call ang_weight_SCAT
+107a112,114
+&gt; 1002  format (&#39;The &quot;isotop&quot; driver is obsolete; &quot;synth&quot; does &#39;,
+&gt;      .        &#39;its functions now!&#39;)
+&gt; 1003  format (22x,&#39;MOOG IS CONTROLLED BY DRIVER &#39;,a7)
+109c116
+&lt; 1018  format (&#39;x11 -bg black -title MOOGplot -geom 1200x400+20+450&#39;)
+---
+&gt; 1018  format (&#39;x11 -bg black -title MOOGplot -geom 1200x350+20+450&#39;)
+113a121,122
+&gt;
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; Oneline [!UNEXPECTED CHANGES]
+2c2
+&lt;       subroutine oneline (imode)
+---
+&gt;       subroutine oneline_scat (imode)
+10a11
+&gt;       include &#39;Scat.com&#39;
+12a14
+&gt;       real*8 d_lc
+40,42c42,46
+&lt;          call cdcalc(1)
+&lt;          first = 0.4343*cd(1)
+&lt;          flux = rinteg(xref,cd,dummy1,ntau,first)
+---
+&gt; c         call cdcalc(1)
+&gt;          call cdcalc_SCAT (1)
+&gt; c         first = 0.4343*cd(1)
+&gt; c         flux = rinteg(xref,cd,dummy1,ntau,first)
+&gt;          flux = Flux_cont_moog
+57,59c61,66
+&lt;          call cdcalc(2)
+&lt;          first = 0.4343*cd(1)
+&lt;          d(1) = rinteg(xref,cd,dummy1,ntau,first)
+---
+&gt; c         call cdcalc(2)
+&gt;          call cdcalc_SCAT (2)
+&gt; c         first = 0.4343*cd(1)
+&gt; c         d(1) = rinteg(xref,cd,dummy1,ntau,first)
+&gt;          d(1) = adepth
+&gt;          d_lc = adepth                                                  | Depth at Line Center
+65c72
+&lt;             wave = wave1(lim1) + 5.*st1
+---
+&gt;             wave = wave1(lim1) + 5.*st1                                 | Wavelength Step
+67,69c74,77
+&lt;             call cdcalc(2)
+&lt;             first = 0.4343*cd(1)
+&lt;             d(2) = rinteg(xref,cd,dummy1,ntau,first)
+---
+&gt; c            call cdcalc(2)
+&gt;             call cdcalc_SCAT (2)
+&gt; c            first = 0.4343*cd(1)
+&gt;             d(2) = adepth
+96,98c104,108
+&lt;          call cdcalc(2)
+&lt;          first = 0.4343*cd(1)
+&lt;          d(n) = rinteg(xref,cd,dummy1,ntau,first)
+---
+&gt; c         call cdcalc(2)
+&gt;          call cdcalc_SCAT (2)
+&gt; c         first = 0.4343*cd(1)
+&gt; c         d(n) = rinteg(xref,cd,dummy1,ntau,first)
+&gt;          d(n) = adepth
+100,109c110,119
+&lt;             do i=1,ntau
+&lt;                dummy1(i) = xref(i)*cd(i)
+&lt;             enddo
+&lt;             first = 0.
+&lt;             cdmean = rinteg(xref,dummy1,dummy2,ntau,first)/
+&lt;      .               rinteg(xref,cd,dummy2,ntau,first)
+&lt;             do i=1,ntau
+&lt;                if (cdmean .lt. cd(i)) exit
+&lt;             enddo
+&lt;             write (nf1out,1005) lim1, cdmean, i, xref(i)
+---
+&gt; c            do i=1,ntau
+&gt; c               dummy1(i) = xref(i)*cd(i)
+&gt; c            enddo
+&gt; c            first = 0.
+&gt; c            cdmean = rinteg(xref,dummy1,dummy2,ntau,first)/
+&gt; c     .               rinteg(xref,cd,dummy2,ntau,first)
+&gt; c            do i=1,ntau
+&gt; c               if (cdmean .lt. cd(i)) exit
+&gt; c            enddo
+&gt; c            write (nf1out,1005) lim1, cdmean, i, xref(i)
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; Synpop [!UNEXPECTED CHANGES]
+2c2
+&lt;       subroutine synpop
+---
+&gt;       subroutine synpop_scat
+128c128
+&lt;             call synspec
+---
+&gt;             call synspec_scat
+132c132
+&lt;                isorun = n
+---
+&gt;                isorun = 1
+139c139
+&lt;                call synspec
+---
+&gt;                call synspec_scat
+262,265d261
+&lt;          if (plotopt .eq. 3) then
+&lt;             call smooth (-1,ncall)
+&lt;             choice = &#39;q&#39;
+&lt;          else
+267d262
+&lt;          endif
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; Synspec [!UNEXPECTED CHANGES]
+2c2
+&lt;       subroutine synspec
+---
+&gt;       subroutine synspec_scat
+12a13
+&gt;       include &#39;Scat.com&#39;
+64,66c65,69
+&lt;             call cdcalc (1)
+&lt;             first = 0.4343*cd(1)
+&lt;             flux = rinteg(xref,cd,dummy1,ntau,first)
+---
+&gt; c            call cdcalc (1)
+&gt;             call cdcalc_SCAT (1)
+&gt; c            first = 0.4343*cd(1)
+&gt; c            flux = rinteg(xref,cd,dummy1,ntau,first)
+&gt;             flux = Flux_cont_moog
+97,99c100,104
+&lt;             call cdcalc (2)
+&lt;             first = 0.4343*cd(1)
+&lt;             d(num) = rinteg(xref,cd,dummy1,ntau,first)
+---
+&gt; c            call cdcalc (2)
+&gt;             call cdcalc_SCAT (2)
+&gt; c            first = 0.4343*cd(1)
+&gt; c            d(num) = rinteg(xref,cd,dummy1,ntau,first)
+&gt;             d(num) = adepth
+161,162c166
+&lt; 1104  format (&#39;SIMPLE  =                    T / Fits standard&#39;/
+&lt;      .        &#39;NAXIS   =     1&#39;/&#39;NAXIS1  = &#39;,i10,/
+---
+&gt; 1104  format (&#39;SIMPLE  =    t&#39;/&#39;NAXIS   =     1&#39;/&#39;NAXIS1  = &#39;,i10,/
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Synth</span>
+<span class="go">2c2</span>
+<span class="go">&lt;       subroutine synth</span>
+<span class="go">---</span>
+<span class="go">&gt;       subroutine synth_scat</span>
+<span class="go">96c96</span>
+<span class="go">&lt;          call getsyns (lscreen,ncall)</span>
+<span class="go">---</span>
+<span class="go">&gt;          call getsyns_scat (lscreen,ncall)</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          <a class="prev-page" href="moog_lte_routines.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">MOOG_LTE Routines</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, J. Sobeck, C. Sneden
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">MOOG_SCAT v1.0.0 CHANGELOG</a><ul>
+<li><a class="reference internal" href="#list-of-lte-coverted-routines">List of LTE Coverted Routines</a></li>
+<li><a class="reference internal" href="#scat-only-routines-files">SCAT-Only Routines/Files</a></li>
+<li><a class="reference internal" href="#lte-code-changes">LTE Code Changes</a></li>
+<li><a class="reference internal" href="#js-suggested-moog-lte-modifications">JS Suggested MOOG_LTE Modifications</a></li>
+<li><a class="reference internal" href="#js-to-do">JS To Do</a></li>
+<li><a class="reference internal" href="#lte-scat-common-subroutines-difference-dff-comparisons">LTE - SCAT Common Subroutines: Difference (dff) Comparisons</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/scripts/furo.js"></script>
+    </body>
+</html>

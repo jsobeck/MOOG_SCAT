@@ -2,9 +2,12 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="#" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="MOOG_LTE Routines" href="moog_lte_routines.html" /><link rel="prev" title="Installation" href="installation.html" />
 
-    <!-- Generated with Sphinx 7.0.1 and Furo 2023.05.20 --><title>Search - MOOG_SCAT</title><link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <!-- Generated with Sphinx 7.0.1 and Furo 2023.05.20 -->
+        <title>MOOG_SCAT Routines - MOOG_SCAT</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
@@ -148,7 +151,7 @@
   
   <span class="sidebar-brand-text">MOOG_SCAT</span>
   
-</a><form class="sidebar-search-container" method="get" action="#" role="search">
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
@@ -159,8 +162,8 @@
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">LTE and SCAT Code Routines</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="moog_scat_routines.html">MOOG_SCAT Routines</a></li>
+<ul class="current">
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">MOOG_SCAT Routines</a></li>
 <li class="toctree-l1"><a class="reference internal" href="moog_lte_routines.html">MOOG_LTE Routines</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Code Reference Sites and Materials</span></p>
@@ -187,7 +190,8 @@
           <span>Back to top</span>
         </a>
         <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+          
+<div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -201,25 +205,43 @@
           </label>
         </div>
         <article role="main">
-          
-<noscript>
-<div class="admonition error">
-  <p class="admonition-title">Error</p>
-  <p>
-    Please activate JavaScript to enable the search functionality.
-  </p>
-</div>
-</noscript>
-
-<div id="search-results"></div>
+          <section id="moog-scat-routines">
+<h1>MOOG_SCAT Routines<a class="headerlink" href="#moog-scat-routines" title="Permalink to this heading">#</a></h1>
+<p>There is one common block and a few subroutines that are only present in the SCAT version of the MOOG code:</p>
+<ul class="simple">
+<li><p>Scat.com (common block)</p></li>
+<li><p>Ang_Weight_SCAT.f (subroutine to assist in the solution of radiative transfer)</p></li>
+<li><p>Gauss_Quad_Sum.f (subroutine to assist in the solution of radiative transfer)</p></li>
+<li><p>Sourcefunc_cont_SCAT.f (subroutine to compute continuum source function)</p></li>
+<li><p>Sourcefunc_line_SCAT.f (subroutine to calculate line source function)</p></li>
+</ul>
+</section>
 
         </article>
       </div>
       <footer>
         
         <div class="related-pages">
-          
-          
+          <a class="next-page" href="moog_lte_routines.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">MOOG_LTE Routines</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="installation.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Installation</div>
+                
+              </div>
+            </a>
         </div>
         <div class="bottom-of-page">
           <div class="left-details">
@@ -248,10 +270,5 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/scripts/furo.js"></script>
-    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
-    <script>mermaid.initialize({startOnLoad:true});</script>
-    
-<script src="_static/searchtools.js"></script>
-<script src="_static/language_data.js"></script>
-<script src="searchindex.js"></script></body>
+    </body>
 </html>
