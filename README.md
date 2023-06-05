@@ -12,7 +12,7 @@ Authors
 Installation
 ------------
 
-To install the latest version of the code, employ one of the OS-specific Makefiles (Makefile_SCAT.macos; Makefile_SCAT.rh) ::
+To install the latest version of the code, employ one of the OS-specific Makefiles (Makefile_SCAT.macos; Makefile_SCAT.rh)::
 
     make -f Makefile*
 
