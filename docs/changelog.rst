@@ -80,11 +80,11 @@ Sourcefunc_line_SCAT.f
 LTE Code Changes
 ----------------
 
-- Removal of the ESTIM routine (as compared to eariler LTE [2017, 2014] versions)
+- Removal of the ESTIM routine (as compared to earlier LTE [2017, 2014] versions)
 
-- Removal of the Minimax routine (as compared to eariler LTE [2017, 2014] versions)
+- Removal of the Minimax routine (as compared to earlier LTE [2017, 2014] versions)
 
-- Addition of SETMOLS routine (as compared to eariler LTE [2017, 2014] versions)
+- Addition of SETMOLS routine (as compared to earlier LTE [2017, 2014] versions)
 
 - In Moog_silent.f, there is still redundancy if a user calls the deprecated 'isotop' driver while in Moog.f no such redundancy exists. Consistency issue!
 
